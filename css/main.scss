@@ -1,0 +1,295 @@
+/******************** VARIABLES ********************/
+$darkest: #000000;
+$dark: #222222;
+$med: #545454;
+$light: #dddddd;
+$lightest: #ffffff;
+
+$headingfont: 'Clicker Script', cursive;
+$bodyfont: 'Raleway', sans-serif;
+$controlsfont: Helvetica, Arial;
+
+
+/******************** GENERAL ********************/
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $darkest;
+}
+
+h1 {
+  font-family: $headingfont;
+  margin: 30px auto;
+  text-align: center;
+  color: $med;
+  font-size: 3.5rem;
+}
+
+h3 {
+  color: $lightest;
+  font-family: $bodyfont;
+  font-size: 1.5rem;
+  text-align: center;
+  margin-right: -35px;
+}
+
+em {
+  font-family: $bodyfont;
+  font-size: 0.90rem;
+}
+
+p {
+  font-family: $bodyfont;
+  margin: auto;
+  text-align: center;
+  color: $med;
+  font-size: 1rem;
+  margin-bottom: 120px;
+}
+
+.link1, .link2 {
+  font-family: $bodyfont;
+  font-size: 1.2rem;
+  font-variant: small-caps;
+  color: $darkest;
+  text-decoration: none;
+  margin: 30px;
+  position: absolute;
+  display: inline;
+}
+
+.link1 {
+  left: 6%;
+}
+.link2 {
+  right: 6%;
+}
+
+
+/******************** VIDEO PLAYER ********************/
+.wrapper {
+  float: center;
+  margin: 10px auto;
+  padding: 10px 20px;
+  border-radius: 8px;
+}
+
+video {
+  display: block;
+  margin: auto;
+  margin-bottom: 100px;
+  padding: 10px;
+}
+
+.mejs-loralee {
+  display: block;
+  margin: auto;
+  margin-bottom: 45px;
+    .mejs-controls {
+      height: 30px;
+      background: $darkest;
+        .mejs-button button {
+          outline: none;
+        }
+        .mejs-captions-button {
+          margin: 0 7px;
+        }
+        .mejs-captions-selector {
+          width: 90px;
+          height: 200px;
+          right: auto;
+        }
+        .mejs-time-rail {
+          padding: 0; 
+            span {
+              height: 100%;
+              border-radius: 0px;
+            }
+        }
+    }
+}
+
+.mejs-loralee .mejs-controls .mejs-time-rail .mejs-time-total,
+.mejs-loralee .mejs-controls .mejs-time-rail .mejs-time-loaded,
+.mejs-loralee .mejs-controls .mejs-time-rail .mejs-time-buffering,
+.mejs-loralee .mejs-controls .mejs-time-rail .mejs-time-handle {
+  background: $dark;
+  margin: 0;
+}
+
+.mejs-loralee .mejs-controls .mejs-time-rail .mejs-time-current {
+  background: $lightest;
+}
+
+.mejs-container .mejs-controls .mejs-time-rail .mejs-time-total .mejs-time-float {
+  border: none;
+  background: none;
+  text-shadow: 0px 1px 2px rgba(0,0,0,0.8);
+  font-family: $controlsfont;
+  font-size: 13px;
+  color: $lightest;
+}
+
+/******************** AUDIO PLAYER ********************/
+#playlist, audio {
+  background:none;
+  width:90%;
+  padding:20px;
+  margin: auto;
+  float: center;
+  margin-top: 10%;
+}
+
+#mep_1 {
+  margin: auto;
+  float: center;
+  margin-top: 5%;
+  margin-bottom: 50px;
+}
+
+.mejs-controls .mejs-time-rail .mejs-time-loaded {
+  background: $med;
+}
+
+li {
+  list-style: none;
+    a {
+      color: $light; 
+      background:none;
+      padding:5px;
+      display:block;
+      text-decoration:none;
+      font-size: 1.1rem;
+      font-family: $bodyfont;
+      text-align: center;
+      margin: 5px;
+        &:hover {
+          text-decoration:none;
+          color:$lightest; 
+          font-weight: 700;
+          font-family: $bodyfont;
+        }
+    }
+}
+
+.active a {
+  text-decoration:none;
+  color:$darkest; 
+  background:$light;
+  font-family: $bodyfont;
+    &:hover {
+      color: $darkest;
+    }
+}
+
+/********************  SECTIONS  ********************/
+.section {
+  clear: both;
+  padding: 0px;
+  margin: 0px;
+}
+
+/********************  COLUMN SETUP  ********************/
+.col {
+  display: block;
+  float:left;
+  margin: 1% 0 1% 2%;
+}
+.col:first-child { margin-left: 0; }
+
+/*  GROUPING  */
+.group:before,
+.group:after { content:""; display:table; }
+.group:after { clear:both;}
+.group { zoom:1; /* For IE 6/7 */ }
+/*  GRID OF TWO  */
+.span_2_of_2 {
+  width: 100%;
+}
+.span_1_of_2 {
+  width: 49%;
+}
+
+/******************** MEDIA QUERIES ********************/
+
+@media only screen and (min-width : 980px) and (max-width : 1500px) {
+   body {
+    background: url('../img/eiffeltowerbg1.jpg') no-repeat;
+    background-size: contain;
+    background-color: $darkest;
+   }
+}
+
+@media only screen and (min-width : 768px) and (max-width : 980px) {
+  body {
+    background: #dddddd; /* Old browsers */
+    background: -moz-linear-gradient(top,  #dddddd 1%, #dddddd 47%, #000000 52%, #000000 99%, #dddddd 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,#dddddd), color-stop(47%,#dddddd), color-stop(52%,#000000), color-stop(99%,#000000), color-stop(100%,#dddddd)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #dddddd 1%,#dddddd 47%,#000000 52%,#000000 99%,#dddddd 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #dddddd 1%,#dddddd 47%,#000000 52%,#000000 99%,#dddddd 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #dddddd 1%,#dddddd 47%,#000000 52%,#000000 99%,#dddddd 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #dddddd 1%,#dddddd 47%,#000000 52%,#000000 99%,#dddddd 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dddddd', endColorstr='#dddddd',GradientType=0 ); /* IE6-9 */
+  }
+}
+
+@media only screen and (min-width : 700px) and (max-width : 768px) {
+  body {
+    background: #dddddd; /* Old browsers */
+    background: -moz-linear-gradient(top,  #dddddd 0%, #dddddd 39%, #dddddd 39%, #000000 45%, #000000 46%, #000000 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#dddddd), color-stop(39%,#dddddd), color-stop(39%,#dddddd), color-stop(45%,#000000), color-stop(46%,#000000), color-stop(100%,#000000)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #dddddd 0%,#dddddd 39%,#dddddd 39%,#000000 45%,#000000 46%,#000000 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #dddddd 0%,#dddddd 39%,#dddddd 39%,#000000 45%,#000000 46%,#000000 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #dddddd 0%,#dddddd 39%,#dddddd 39%,#000000 45%,#000000 46%,#000000 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #dddddd 0%,#dddddd 39%,#dddddd 39%,#000000 45%,#000000 46%,#000000 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dddddd', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
+  }
+  .col { 
+    margin: 1% 0 1% 0%;
+  }
+  .span_2_of_2, .span_1_of_2 { 
+    width: 100%; 
+  }
+  #playlist {
+    margin-top: 5%;
+  }
+  .link1, .link2 {
+    display: block;
+    float: center;
+    top: 0px;
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width : 700px) {
+  body {
+    background: #dddddd; /* Old browsers */
+    background: -moz-linear-gradient(top,  #dddddd 0%, #dddddd 39%, #dddddd 39%, #000000 45%, #000000 46%, #000000 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#dddddd), color-stop(39%,#dddddd), color-stop(39%,#dddddd), color-stop(45%,#000000), color-stop(46%,#000000), color-stop(100%,#000000)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #dddddd 0%,#dddddd 39%,#dddddd 39%,#000000 45%,#000000 46%,#000000 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #dddddd 0%,#dddddd 39%,#dddddd 39%,#000000 45%,#000000 46%,#000000 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #dddddd 0%,#dddddd 39%,#dddddd 39%,#000000 45%,#000000 46%,#000000 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #dddddd 0%,#dddddd 39%,#dddddd 39%,#000000 45%,#000000 46%,#000000 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dddddd', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
+  }
+  .col { 
+    margin: 1% 0 1% 0%;
+  }
+  .span_2_of_2, .span_1_of_2 { 
+    width: 100%; 
+  }
+  #playlist {
+    margin-top: 5%;
+  }
+  .link1, .link2 {
+    display: block;
+    float: center;
+    top: 0px;
+    margin: 0;
+  }
+}
+

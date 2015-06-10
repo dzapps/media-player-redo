@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Video and Audio</title>
+
+    <link href='http://fonts.googleapis.com/css?family=Clicker+Script' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Raleway:400,700' rel='stylesheet' type='text/css'>
+
+    <script src="js/jquery.js"></script>
+    <script src="js/mediaelement-and-player.min.js"></script>
+
+    <link rel="stylesheet" href="css/mediaelementplayer.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+  </head>
+  
+  <body>
+  
+    <a href="https://itunes.apple.com/us/movie/for-lovers-only/id445141929" class="link1">buy the film</a>
+    <a href="https://itunes.apple.com/us/album/for-lovers-only-original-score/id447963190" class="link2">buy the soundtrack</a>
+    
+    <h1>for lovers only</h1>
+
+    
+
+    <div class="wrapper">
+      <!-- Video -->
+      <video class="mejs-loralee" width="640" height="272" controls>
+        <source src="media/0 flo.mp4" type="video/mp4">
+        <track label="English" kind="subtitles" srclang="en" src="captionsenglish.vtt" >
+        <track label="French" kind="subtitles" srclang="fr" src="captionsfrench.vtt" default>
+      </video>
+    </div> <!--  wrapper -->
+
+    <div class="floplaylist">
+      <audio id="audio" tabindex="0" controls type="audio/mp3">
+          <source type="audio/mp3">
+      </audio>
+      <ul id="playlist">
+        <div class="section group">
+          <div class="col span_1_of_2">
+            <h3>Featured Songs</h3>
+            <ul>
+              <li class="active"><a href="media/12.mp3">No Cars Go <em>by Arcade Fire</em></a></li>
+              <li><a href="media/13.mp3">Sex Tourists <em>by French Kicks</em></a></li>
+              <li><a href="media/14.mp3">Heartache <em>by A Girl Called Eddy</em></a></li>
+              <li><a href="media/15.mp3">La Noyee <em>by Serge Gainsbourg</em></a></li>
+              <li><a href="media/16.mp3">Les Tcheques <em>by Mathieu Boogarerts</em></a></li>
+              <li><a href="media/17.mp3">Toute Ressemblance <em>by Pascal Columb</em></a></li>
+              <li><a href="media/18.mp3">Everybody Here Wants You <em>by Jeff Buckley</em></a></li>
+              <li><a href="media/19.mp3">Love <em>by John Lennon</em></a></li>
+            </ul>
+         </div>
+         <div class="col span_1_of_2">
+            <h3>Original Sound Track by Kubilay Uner</h3>
+            <ul>
+              <li><a href="media/01">Figé Dans Le Temps</a></li>
+              <li><a href="media/02">Pour Frédéric</a></li>
+              <li><a href="media/03.mp3">Un baiser au bord de la Seine</a></li>
+              <li><a href="media/04.mp3">Deux amants dans un château</a></li>
+              <li><a href="media/05.mp3">Sur la plage</a></li>
+              <li><a href="media/06.mp3">Promenade</a></li>
+              <li><a href="media/07.mp3">Les Amoureux</a></li>
+              <li><a href="media/08.mp3">C'est La Période Que Je Traverse</a></li>
+              <li><a href="media/09.mp3">Un enfant et un vieillard</a></li>
+              <li><a href="media/10.mp3">Elle Prie Pour Un Miracle</a></li>
+              <li><a href="media/11.mp3">Cache-cache</a></li>
+            </ul>
+        </div>
+      </div>
+    </ul>
+  </div> 
+    <script src="js/scripts.js"></script>
+  </body>
+</html>
