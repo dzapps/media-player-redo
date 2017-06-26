@@ -3,75 +3,627 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HTML Video and Audio</title>
-
-    <link href='http://fonts.googleapis.com/css?family=Clicker+Script' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Raleway:400,700' rel='stylesheet' type='text/css'>
-
-    <script src="js/jquery.js"></script>
-    <script src="js/mediaelement-and-player.min.js"></script>
-
-    <link rel="stylesheet" href="css/mediaelementplayer.css">
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/main.css">
-  </head>
-  
-  <body>
-  
-    <a href="https://itunes.apple.com/us/movie/for-lovers-only/id445141929" class="link1">buy the film</a>
-    <a href="https://itunes.apple.com/us/album/for-lovers-only-original-score/id447963190" class="link2">buy the soundtrack</a>
-    
-    <h1>for lovers only</h1>
+    <title>المكتبة الصوتية</title>
 
     
+    
+  <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/Reklino/munkey-icons/master/munkey.css">
 
-    <div class="wrapper">
-      <!-- Video -->
-      <video class="mejs-loralee" width="640" height="272" controls>
-        <source src="media/0 flo.mp4" type="video/mp4">
-        <track label="English" kind="subtitles" srclang="en" src="captionsenglish.vtt" >
-        <track label="French" kind="subtitles" srclang="fr" src="captionsfrench.vtt" default>
-      </video>
-    </div> <!--  wrapper -->
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
 
-    <div class="floplaylist">
-      <audio id="audio" tabindex="0" controls type="audio/mp3">
-          <source type="audio/mp3">
-      </audio>
-      <ul id="playlist">
-        <div class="section group">
-          <div class="col span_1_of_2">
-            <h3>Featured Songs</h3>
-            <ul>
-              <li class="active"><a href="media/12.mp3">No Cars Go <em>by Arcade Fire</em></a></li>
-              <li><a href="media/13.mp3">Sex Tourists <em>by French Kicks</em></a></li>
-              <li><a href="media/14.mp3">Heartache <em>by A Girl Called Eddy</em></a></li>
-              <li><a href="media/15.mp3">La Noyee <em>by Serge Gainsbourg</em></a></li>
-              <li><a href="media/16.mp3">Les Tcheques <em>by Mathieu Boogarerts</em></a></li>
-              <li><a href="media/17.mp3">Toute Ressemblance <em>by Pascal Columb</em></a></li>
-              <li><a href="media/18.mp3">Everybody Here Wants You <em>by Jeff Buckley</em></a></li>
-              <li><a href="media/19.mp3">Love <em>by John Lennon</em></a></li>
-            </ul>
-         </div>
-         <div class="col span_1_of_2">
-            <h3>Original Sound Track by Kubilay Uner</h3>
-            <ul>
-              <li><a href="media/01">Figé Dans Le Temps</a></li>
-              <li><a href="media/02">Pour Frédéric</a></li>
-              <li><a href="media/03.mp3">Un baiser au bord de la Seine</a></li>
-              <li><a href="media/04.mp3">Deux amants dans un château</a></li>
-              <li><a href="media/05.mp3">Sur la plage</a></li>
-              <li><a href="media/06.mp3">Promenade</a></li>
-              <li><a href="media/07.mp3">Les Amoureux</a></li>
-              <li><a href="media/08.mp3">C'est La Période Que Je Traverse</a></li>
-              <li><a href="media/09.mp3">Un enfant et un vieillard</a></li>
-              <li><a href="media/10.mp3">Elle Prie Pour Un Miracle</a></li>
-              <li><a href="media/11.mp3">Cache-cache</a></li>
-            </ul>
-        </div>
+    <link rel="stylesheet" href="http://fontawesome.io/assets/font-awesome/css/font-awesome.css">
+
+      <style>
+      @import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700);
+.no-select, .grid-toggle, ul.grid.grid-list .grid-head ul li {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+::-webkit-input-placeholder {
+  color: #5d7592;
+}
+
+:-moz-placeholder {
+  color: #5d7592;
+}
+
+::-moz-placeholder {
+  color: #5d7592;
+}
+
+:-ms-input-placeholder {
+  color: #5d7592;
+}
+
+.m {
+  font-size: 28px;
+}
+
+body {
+  text-align: center;
+  background: #f9fcfe;
+  color: #38405e;
+  font-size: 16px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+header {
+  width: 100%;
+  background: #38405e;
+  padding: 3em 0;
+  color: white;
+}
+header h1 {
+  font-weight: 300;
+  font-size: 36px;
+  margin: 0.75em 0;
+}
+header h1 span {
+  font-size: 90%;
+  color: #1bbbef;
+}
+
+main {
+  padding: 1.5em 0 0;
+}
+
+footer, main {
+  max-width: 960px;
+  margin: 0 auto;
+}
+footer:after, main:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+footer {
+  padding: 2em 0;
+}
+footer p {
+  color: #5d7592;
+  font-size: 14px;
+}
+
+.ctrls {
+  margin-bottom: 1em;
+}
+.ctrls:after {
+  content: '';
+  clear: both;
+  display: block;
+}
+
+.filter {
+  float: left;
+  width: 75%;
+  padding-left: 2.5em;
+}
+.filter .m {
+  color: #5d7592;
+  position: absolute;
+  margin-left: -1.25em;
+}
+.filter input {
+  width: 100%;
+  vertical-align: top;
+  height: 2em;
+  border: none;
+  background: #f9fcfe;
+  font-size: 16px;
+  font-weight: 300;
+  color: #5d7592;
+  outline: none;
+  padding: 0 0.5em;
+}
+
+.grid-toggle {
+  cursor: pointer;
+  float: right;
+}
+.grid-toggle a span {
+  color: #5d7592;
+}
+.grid-toggle a span:first-child {
+  color: #38405e;
+  margin-right: 12px;
+}
+.grid-toggle a.active span:first-child {
+  color: #5d7592;
+}
+.grid-toggle a.active span:last-child {
+  color: #38405e;
+}
+
+.btn {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #5d7592;
+}
+
+ul.grid .grid-body ul li span {
+  display: inline-block;
+  line-height: normal;
+  vertical-align: middle;
+}
+ul.grid .grid-body ul li span.grid-icon {
+  color: #476283;
+}
+ul.grid .grid-body ul li span.grid-title a {
+  font-size: 16px;
+  font-weight: 500;
+  color: #38405e;
+  text-decoration: none;
+}
+ul.grid .grid-body ul li span.grid-title a:hover {
+  text-decoration: underline;
+}
+ul.grid .grid-body ul li span.grid-usericon {
+  margin-right: 12px;
+  font-size: 0;
+  width: 36px;
+  height: 36px;
+  line-height: 36px;
+  text-align: center;
+  background: #1bbbef;
+  -moz-border-radius: 100px;
+  -webkit-border-radius: 100px;
+  border-radius: 100px;
+}
+ul.grid .grid-body ul li span.grid-usericon:first-letter {
+  color: white;
+  font-size: 16px;
+}
+ul.grid .grid-body ul li span.grid-date, ul.grid .grid-body ul li span.grid-user {
+  color: #5d7592;
+  font-size: 14px;
+}
+ul.grid .grid-body ul li span a .m {
+  color: #5d7592;
+}
+
+ul.grid.grid-thumb:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+ul.grid.grid-thumb .grid-head {
+  display: none;
+}
+ul.grid.grid-thumb .grid-body {
+  width: 50%;
+  float: left;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin-bottom: 2em;
+}
+ul.grid.grid-thumb .grid-body:nth-child(even) {
+  padding-right: 1em;
+}
+ul.grid.grid-thumb .grid-body:nth-child(odd) {
+  padding-left: 1em;
+}
+ul.grid.grid-thumb .grid-body ul {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  background: white;
+  border: 1px solid #dde8f0;
+  padding: 1em 1.5em .75em;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  float: left;
+  width: 100%;
+}
+ul.grid.grid-thumb .grid-body ul:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+ul.grid.grid-thumb .grid-body ul li {
+  position: relative;
+}
+ul.grid.grid-thumb .grid-body ul li span.grid-icon {
+  display: block;
+  font-size: 56px;
+  margin: 0 0 12px;
+}
+ul.grid.grid-thumb .grid-body ul li span.grid-title {
+  display: block;
+  margin-bottom: 1em;
+}
+ul.grid.grid-thumb .grid-body ul li span.grid-user {
+  margin-bottom: 2px;
+}
+ul.grid.grid-thumb .grid-body ul li span.grid-user .grid-usericon {
+  position: absolute;
+  left: 0;
+  bottom: -37px;
+}
+ul.grid.grid-thumb .grid-body ul li span.grid-date {
+  display: block;
+}
+ul.grid.grid-thumb .grid-body ul li span.grid-options {
+  float: right;
+}
+
+ul.grid.grid-list {
+  background: white;
+  border: 1px solid #dde8f0;
+  padding: 0 2em;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+}
+ul.grid.grid-list li.grid-body {
+  border-bottom: 1px solid #dde8f0;
+}
+ul.grid.grid-list li.grid-body:last-child, ul.grid.grid-list li.grid-body.last {
+  border-bottom: none;
+}
+ul.grid.grid-list .grid-head ul:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+ul.grid.grid-list .grid-head ul li {
+  font-size: 16px;
+  border: none;
+  text-align: left;
+  padding: 2em 0 1em;
+  float: left;
+}
+ul.grid.grid-list .grid-head ul li a {
+  cursor: pointer;
+  color: #1bbbef;
+  font-weight: 600;
+}
+ul.grid.grid-list .grid-head ul li a:hover {
+  text-decoration: underline;
+}
+ul.grid.grid-list .grid-body ul:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+ul.grid.grid-list .grid-body ul li {
+  border: none;
+  text-align: left;
+  height: 5em;
+  line-height: 5em;
+  padding: 0;
+  float: left;
+}
+ul.grid.grid-list .grid-body ul li:first-child {
+  text-align: left;
+  width: 40%;
+}
+ul.grid.grid-list .grid-body ul li:nth-child(2) {
+  width: 30%;
+}
+ul.grid.grid-list .grid-body ul li:nth-child(3) {
+  width: 15%;
+}
+ul.grid.grid-list .grid-body ul li:last-child {
+  text-align: right;
+  width: 15%;
+}
+ul.grid.grid-list .grid-body ul li span.grid-icon {
+  margin-right: 0.5em;
+}
+ul.grid.grid-list .grid-body ul li span.grid-username {
+  width: 100px;
+}
+
+li.clear-fix {
+  display: block;
+  clear: both;
+}
+
+li.pagination {
+  padding: 1em 0 2em;
+}
+li.pagination p {
+  font-size: 14px;
+}
+li.pagination ul.pager {
+  margin: 2em 0;
+}
+li.pagination ul.pager li {
+  display: inline;
+}
+li.pagination ul.pager li:first-child {
+  margin-right: 1em;
+}
+li.pagination ul.pager li a {
+  color: #1bbbef;
+  text-decoration: none;
+  padding: 0.5em 1.5em;
+  border: 1px solid #1bbbef;
+  -moz-border-radius: 100px;
+  -webkit-border-radius: 100px;
+  border-radius: 100px;
+}
+
+.animate-repeat {
+  list-style: none;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.animate-repeat.ng-move,
+.animate-repeat.ng-enter,
+.animate-repeat.ng-leave {
+  -webkit-transition: all ease-in-out 0.4s;
+  transition: all ease-in-out 0.4s;
+}
+
+.animate-repeat.ng-leave.ng-leave-active,
+.animate-repeat.ng-move,
+.animate-repeat.ng-enter {
+  opacity: 0;
+}
+
+.animate-repeat.ng-leave,
+.animate-repeat.ng-move.ng-move-active,
+.animate-repeat.ng-enter.ng-enter-active {
+  opacity: 1;
+}
+
+.grid-thumb .animate-repeat.ng-move,
+.grid-thumb .animate-repeat.ng-enter,
+.grid-thumb .animate-repeat.ng-leave {
+  -webkit-transition: none;
+  transition: none;
+}
+
+.grid-list .animate-repeat {
+  line-height: 5em;
+}
+.grid-list .animate-repeat.ng-leave.ng-leave-active,
+.grid-list .animate-repeat.ng-move,
+.grid-list .animate-repeat.ng-enter {
+  height: 0;
+}
+.grid-list .animate-repeat.ng-leave,
+.grid-list .animate-repeat.ng-move.ng-move-active,
+.grid-list .animate-repeat.ng-enter.ng-enter-active {
+  height: 5em;
+}
+
+    </style>
+
+  
+  
+  
+  
+</head>
+
+<body translate="no" >
+
+  <body ng-app="app" ng-controller="main">
+  <header>
+      <h1>Objects <span>( {{ items.length }} )</span></h1>
+    </header>
+  <main>    
+
+    <div class="ctrls">
+      
+      <div class="filter">
+        <span class="m m-search"></span>
+        <input type="text" ng-model="searchies" ng-change="onQueryChange(searchies)" class="form-control" placeholder="Filter">
       </div>
-    </ul>
-  </div> 
-    <script src="js/scripts.js"></script>
-  </body>
+
+      <div class="grid-toggle">
+        <a ng-click="gridToggle = !gridToggle" ng-class="{ 'active' : gridToggle }">
+          <span class="m m-squares"></span>
+          <span class="m m-form"></span>
+        </a>
+      </div>
+      
+    </div>
+    
+  
+    <div class="container">
+      
+      <ul class="grid" ng-class="{ 'grid-list' : gridToggle, 'grid-thumb' : !gridToggle }">
+        <li class="grid-head">
+          <ul>
+            <li style="width:40%"><a ng-click="sort_by('name')">الصوتيات</a></li>
+            <li style="width:30%"><a ng-click="sort_by('user.name')">المؤلف</a></li>
+              <li style="width:15%"><a ng-click="sort_by('date')">تاريخ الرفع و النشر</a></li>
+            <li style="width:15%"></li>
+          </ul>
+        </li>
+        <li class="grid-body animate-repeat" ng-repeat="item in pagedItems[currentPage - 1] | orderBy:sortingOrder:reverse" ng-class="{'last':$last}">
+          
+          <ul>
+            <li>
+              
+              <span class="grid-icon m" ng-class="item.icon"></span>
+              <span class="grid-title"><a href="#">{{ item.name }}</a></span>
+            </li>
+            
+            <li>
+              <span class="grid-user">
+                <span class="grid-usericon" ng-style="{ 'background' : item.user.color }">{{ item.user.name }}</span>
+                <span class="grid-username">Updated by {{ item.user.name }}</span>
+              </span>
+            </li>
+            
+            <li>
+              <span class="grid-date">{{ item.date }}</span>
+            </li>
+            
+            <li>
+              <span class="grid-options"><a href="#"><span class="m m-ellipsis"></span></a></span>
+            </li>
+          </ul>
+          
+        </li>
+        
+        <li class="clear-fix"></li>
+        
+        <li class="pagination">
+          <pager total-items="totalItems" items-per-page="itemsPerPage" ng-model="currentPage" max-size="maxSize" ng-change="pageChanged()"></pager>
+          <p ng-if="itemsPerPage * currentPage < totalItems">
+            Showing {{ itemsPerPage * currentPage - itemsPerPage + 1 }} - {{ itemsPerPage * currentPage }} of {{ totalItems }} total items
+          </p>
+          <p ng-if="itemsPerPage * currentPage >= totalItems">
+            Showing {{ itemsPerPage * currentPage - itemsPerPage + 1 }} - {{ totalItems }} of {{ totalItems }} total items
+          </p>
+        </li>
+      </ul>
+      
+    </div>
+    
+  </main>
+  
+  <footer>
+    <p>كل الحقوق محفوظة @ 2017</p>
+  </footer>
+  
+</body>
+  
+  <script src='//ajax.googleapis.com/ajax/libs/angularjs/1.3.2/angular.min.js'></script>
+<script src='//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.12.0/ui-bootstrap-tpls.min.js'></script>
+<script src='//ajax.googleapis.com/ajax/libs/angularjs/1.3.1/angular-animate.js'></script>
+
+    <script>
+    angular.module('app', ['ui.bootstrap', 'ngAnimate'])
+.factory('sortable', ['$filter', '$rootScope', function($filter, $rootScope){
+
+  return function (scope, data, itemsPerPage, initSortingOrder) {
+
+    
+    scope.sortingOrder = initSortingOrder;
+    scope.reverse = false;
+    scope.filteredItems = [];
+    scope.groupedItems = [];
+    scope.itemsPerPage = itemsPerPage;
+    scope.pagedItems = [];
+    scope.currentPage = 1;
+    scope.items = data;
+    scope.maxSize = 5;
+
+    var searchMatch = function (haystack, needle) {
+          if (!needle) {
+              return true;
+          }
+          return haystack.toLowerCase().indexOf(needle.toLowerCase()) !== -1;
+      };
+
+
+      // init the filtered items
+      scope.search = function () {
+
+          scope.filteredItems = $filter('filter')(scope.items, $rootScope.query);
+
+          // take care of the sorting order
+        if (scope.sortingOrder !== '') {
+            scope.filteredItems = $filter('orderBy')(scope.filteredItems, scope.sortingOrder, scope.reverse);
+        }
+
+          scope.currentPage = 1;
+
+          // now group by pages
+          scope.groupToPages();
+
+          // reset the total items for the pagination buttons
+          scope.totalItems = scope.filteredItems.length;
+      };
+      
+
+      // calculate page in place
+      scope.groupToPages = function () {
+          scope.pagedItems = [];
+          
+          for (var i = 0; i < scope.filteredItems.length; i++) {
+              if (i % scope.itemsPerPage === 0) {
+                  scope.pagedItems[Math.floor(i / scope.itemsPerPage)] = [ scope.filteredItems[i] ];
+              } else {
+                  scope.pagedItems[Math.floor(i / scope.itemsPerPage)].push(scope.filteredItems[i]);
+              }
+          }
+      };
+      
+
+      scope.range = function (start, end) {
+          var ret = [];
+          if (!end) {
+              end = start;
+              start = 0;
+          }
+          for (var i = start; i < end; i++) {
+              ret.push(i);
+          }
+          return ret;
+      };
+
+
+      // functions have been described process the data for display
+      scope.search();
+
+
+      // change sorting order
+      scope.sort_by = function(newSortingOrder) {
+          if (scope.sortingOrder == newSortingOrder)
+              scope.reverse = !scope.reverse;
+
+          scope.sortingOrder = newSortingOrder;
+
+          // call search again to make sort affect whole query
+          scope.search();
+      };
+
+      scope.sort_by(initSortingOrder);
+      scope.totalItems = scope.filteredItems.length;
+  }
+
+}])
+  .controller('main', [ '$scope', '$rootScope', 'sortable', function($scope, $rootScope, sortable) {
+    
+    $rootScope.query = '';
+    
+    $scope.gridToggle = true;
+
+    $scope.onQueryChange = function(val){
+       $rootScope.query = val;
+       $scope.search();
+    };
+    
+    var items = [
+      { 'icon' : '<i class="fa fa-music"></i>',  'name' : 'سلسلة الهدى و النور',          'date' : '26-06-2017', 'user' : { 'name' : 'العلامة محمد ناصر الدين الألباني',  'color' : '#07D5E5'} },
+      { 'icon' : 'm-sound',     'name' : 'Mobile Splash Page',     'date' : 'Yesterday at 4:30pm', 'user' : { 'name' : 'Munkey',  'color' : '#07D5E5'} },
+      { 'icon' : 'm-photo',   'name' : 'Some Other Site',        'date' : 'Today at 3:35am', 'user' : { 'name' : 'Someone', 'color' : '#456183'} },
+      { 'icon' : 'm-desktop', 'name' : 'Jerry\'s Blog',          'date' : 'Thursday at 7:15pm', 'user' : { 'name' : 'Jerry',   'color' : '#4677A7'} },
+      { 'icon' : 'm-form',    'name' : 'Ape\'s Capture Form',    'date' : 'Today at Noon', 'user' : { 'name' : 'Ape',     'color' : '#09ABC5'} },
+      { 'icon' : 'm-phone',   'name' : 'Some Mobile Site',       'date' : 'Thursday at 1:27pm', 'user' : { 'name' : 'Someone', 'color' : '#456183'} },
+      { 'icon' : 'm-bell',    'name' : 'Fish\'s Wordpress Site', 'date' : 'Yesterday at Noon', 'user' : { 'name' : 'Fish',    'color' : '#1CB7BB'} },
+      { 'icon' : 'm-group',   'name' : 'Kitty Kat Kapture Form', 'date' : 'Wednesday at 7:15pm', 'user' : { 'name' : 'Kitty',   'color' : '#1D9D9D'} }
+    ];
+    
+    sortable($scope, items, 6, 'updated_at');
+    
+  }]);
+  </script>
+
+  
+  
+
+</body>
 </html>
+    
+  
