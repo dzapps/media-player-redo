@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
@@ -56,6 +55,10 @@ body {
   text-rendering: optimizeLegibility;
 }
 
+canvas {
+  position: absolute;
+}
+        
 header {
   width: 100%;
   background: #38405e;
@@ -64,10 +67,16 @@ header {
 }
 header h1 {
   font-weight: 300;
+  font-size: 66px;
+  color: #1bbbef;
+  margin: 0.75em 0;
+}
+header h2 {
+  font-weight: 300;
   font-size: 36px;
   margin: 0.75em 0;
 }
-header h1 span {
+header h2 span {
   font-size: 90%;
   color: #1bbbef;
 }
@@ -415,7 +424,13 @@ li.pagination ul.pager li a {
 
   <body ng-app="app" ng-controller="main">
   <header>
-      <h1>Objects <span>( {{ items.length }} )</span></h1>
+        <h1>المكتبة الصوتية</h1>
+      </div>
+   
+
+      </div>
+
+      <h2>عدد الصوتيات - <span> {{ items.length }} </span></h2>
     </header>
   <main>    
 
@@ -453,13 +468,13 @@ li.pagination ul.pager li a {
             <li>
               
               <span class="grid-icon m" ng-class="item.icon"></span>
-              <span class="grid-title"><a href="#">{{ item.name }}</a></span>
+              <span class="grid-title">{{ item.name }}</a></span>
             </li>
             
             <li>
               <span class="grid-user">
                 <span class="grid-usericon" ng-style="{ 'background' : item.user.color }">{{ item.user.name }}</span>
-                <span class="grid-username">Updated by {{ item.user.name }}</span>
+                <span class="grid-username">تأليف {{ item.user.name }}</span>
               </span>
             </li>
             
@@ -468,7 +483,7 @@ li.pagination ul.pager li a {
             </li>
             
             <li>
-              <span class="grid-options"><a href="#"><span class="m m-ellipsis"></span></a></span>
+              <span class="grid-options"><span class="m m-ellipsis"></span></a></span>
             </li>
           </ul>
           
@@ -500,6 +515,9 @@ li.pagination ul.pager li a {
   <script src='//ajax.googleapis.com/ajax/libs/angularjs/1.3.2/angular.min.js'></script>
 <script src='//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.12.0/ui-bootstrap-tpls.min.js'></script>
 <script src='//ajax.googleapis.com/ajax/libs/angularjs/1.3.1/angular-animate.js'></script>
+
+
+  <a onmouseover="parent.location='www.google.com'">google</A>
 
     <script>
     angular.module('app', ['ui.bootstrap', 'ngAnimate'])
@@ -605,22 +623,46 @@ li.pagination ul.pager li a {
     };
     
     var items = [
-      { 'icon' : 'm-phone',  'name' : 'سلسلة الهدى و النور',         'date' : ' <a href="https://dzapps.github.io/media-player-redo/media/islamia/Cheikh Mohamed Nacer Edine Al Albani/silsilate el hoda wa nour/index1.html"> ', 'user' : { 'name' : 'العلامة محمد ناصر الدين الألباني',  'color' : '#07D5E5'} },
-      { 'icon' : 'class="fa fa-music',     'name' : 'Mobile Splash Page',     'date' : 'Yesterday at 4:30pm', 'user' : { 'name' : 'Munkey',  'color' : '#07D5E5'} },
-      { 'icon' : 'm-photo',   'name' : 'Some Other Site',        'date' : 'Today at 3:35am', 'user' : { 'name' : 'Someone', 'color' : '#456183'} },
-      { 'icon' : 'm-desktop', 'name' : 'Jerry\'s Blog',          'date' : 'Thursday at 7:15pm', 'user' : { 'name' : 'Jerry',   'color' : '#4677A7'} },
-      { 'icon' : 'm-form',    'name' : 'Ape\'s Capture Form',    'date' : 'Today at Noon', 'user' : { 'name' : 'Ape',     'color' : '#09ABC5'} },
-      { 'icon' : 'm-phone',   'name' : 'Some Mobile Site',       'date' : 'Thursday at 1:27pm', 'user' : { 'name' : 'Someone', 'color' : '#456183'} },
-      { 'icon' : 'm-bell',    'name' : 'Fish\'s Wordpress Site', 'date' : 'Yesterday at Noon', 'user' : { 'name' : 'Fish',    'color' : '#1CB7BB'} },
-      { 'icon' : 'm-group',   'name' : 'Kitty Kat Kapture Form', 'date' : 'Wednesday at 7:15pm', 'user' : { 'name' : 'Kitty',   'color' : '#1D9D9D'} }
-
-      { 'icon' : 'class="fa fa-music',     'name' : 'Mobile Splash Page',     'date' : 'Yesterday at 4:30pm', 'user' : { 'name' : 'Munkey',  'color' : '#07D5E5'} },
-      { 'icon' : 'm-music',   'name' : 'Some Other Site',        'date' : 'Today at 3:35am', 'user' : { 'name' : 'Someone', 'color' : '#456183'} },
-      { 'icon' : 'm-desktop', 'name' : 'Jerry\'s Blog',          'date' : 'Thursday at 7:15pm', 'user' : { 'name' : 'Jerry',   'color' : '#4677A7'} },
-      { 'icon' : 'm-form',    'name' : 'Ape\'s Capture Form',    'date' : 'Today at Noon', 'user' : { 'name' : 'Ape',     'color' : '#09ABC5'} },
-      { 'icon' : 'm-phone',   'name' : 'Some Mobile Site',       'date' : 'Thursday at 1:27pm', 'user' : { 'name' : 'Someone', 'color' : '#456183'} },
-      { 'icon' : 'm-bell',    'name' : 'Fish\'s Wordpress Site', 'date' : 'Yesterday at Noon', 'user' : { 'name' : 'Fish',    'color' : '#1CB7BB'} },
-      { 'icon' : 'm-group',   'name' : 'Kitty Kat Kapture Form', 'date' : 'Wednesday at 7:15pm', 'user' : { 'name' : 'Kitty',   'color' : '#1D9D9D'} }      
+      { 'icon' : 'm-phone',  'name' : 'سلسلة الهدى و النور', 'date' : '<a onmouseover="parent.location='www.google.com'">google</A>"', 'user' : { 'name' :  'محمد ناصر الدين الألباني',  'color' : '#07D5E5'} },
+      { 'icon' : 'm-phone',  'name' : 'سلسلة الهدى و النور', 'date' : 'https://dzapps.github.io/media-player-redo/media/islamia/Cheikh Mohamed Nacer Edine Al Albani/silsilate el hoda wa nour/index1.html', 'user' : { 'name' :  'محمد ناصر الدين الألباني',  'color' : '#07D5E5'} },
+      { 'icon' : 'm-phone',  'name' : 'سلسلة الهدى و النور', 'date' : 'https://dzapps.github.io/media-player-redo/media/islamia/Cheikh Mohamed Nacer Edine Al Albani/silsilate el hoda wa nour/index1.html', 'user' : { 'name' :  'محمد ناصر الدين الألباني',  'color' : '#07D5E5'} },
+      { 'icon' : 'm-phone',  'name' : 'سلسلة الهدى و النور', 'date' : 'https://dzapps.github.io/media-player-redo/media/islamia/Cheikh Mohamed Nacer Edine Al Albani/silsilate el hoda wa nour/index1.html', 'user' : { 'name' :  'محمد ناصر الدين الألباني',  'color' : '#07D5E5'} },
+      { 'icon' : 'm-phone',  'name' : 'سلسلة الهدى و النور', 'date' : 'https://dzapps.github.io/media-player-redo/media/islamia/Cheikh Mohamed Nacer Edine Al Albani/silsilate el hoda wa nour/index1.html', 'user' : { 'name' :  'محمد ناصر الدين الألباني',  'color' : '#07D5E5'} },
+      { 'icon' : 'm-phone',  'name' : 'سلسلة الهدى و النور', 'date' : 'https://dzapps.github.io/media-player-redo/media/islamia/Cheikh Mohamed Nacer Edine Al Albani/silsilate el hoda wa nour/index1.html', 'user' : { 'name' :  'محمد ناصر الدين الألباني',  'color' : '#07D5E5'} },
+       { 'icon' : 'm-phone',  'name' : 'سلسلة الهدى و النور', 'date' : 'https://dzapps.github.io/media-player-redo/media/islamia/Cheikh Mohamed Nacer Edine Al Albani/silsilate el hoda wa nour/index1.html', 'user' : { 'name' :  'محمد ناصر الدين الألباني',  'color' : '#07D5E5'} },
+      { 'icon' : 'm-phone',  'name' : 'سلسلة الهدى و النور', 'date' : 'https://dzapps.github.io/media-player-redo/media/islamia/Cheikh Mohamed Nacer Edine Al Albani/silsilate el hoda wa nour/index1.html', 'user' : { 'name' :  'محمد ناصر الدين الألباني',  'color' : '#07D5E5'} },
+      { 'icon' : 'm-phone',  'name' : 'سلسلة الهدى و النور', 'date' : 'https://dzapps.github.io/media-player-redo/media/islamia/Cheikh Mohamed Nacer Edine Al Albani/silsilate el hoda wa nour/index1.html', 'user' : { 'name' :  'محمد ناصر الدين الألباني',  'color' : '#07D5E5'} },
+       { 'icon' : 'm-phone',  'name' : 'سلسلة الهدى و النور', 'date' : 'https://dzapps.github.io/media-player-redo/media/islamia/Cheikh Mohamed Nacer Edine Al Albani/silsilate el hoda wa nour/index1.html', 'user' : { 'name' :  'محمد ناصر الدين الألباني',  'color' : '#07D5E5'} },
+      { 'icon' : 'm-phone',  'name' : 'سلسلة الهدى و النور', 'date' : 'https://dzapps.github.io/media-player-redo/media/islamia/Cheikh Mohamed Nacer Edine Al Albani/silsilate el hoda wa nour/index1.html', 'user' : { 'name' :  'محمد ناصر الدين الألباني',  'color' : '#07D5E5'} },
+      { 'icon' : 'm-phone',  'name' : 'سلسلة الهدى و النور', 'date' : 'https://dzapps.github.io/media-player-redo/media/islamia/Cheikh Mohamed Nacer Edine Al Albani/silsilate el hoda wa nour/index1.html', 'user' : { 'name' :  'محمد ناصر الدين الألباني',  'color' : '#07D5E5'} },
+       { 'icon' : 'm-phone',  'name' : 'سلسلة الهدى و النور', 'date' : 'https://dzapps.github.io/media-player-redo/media/islamia/Cheikh Mohamed Nacer Edine Al Albani/silsilate el hoda wa nour/index1.html', 'user' : { 'name' :  'محمد ناصر الدين الألباني',  'color' : '#07D5E5'} },
+      { 'icon' : 'm-phone',  'name' : 'سلسلة الهدى و النور', 'date' : 'https://dzapps.github.io/media-player-redo/media/islamia/Cheikh Mohamed Nacer Edine Al Albani/silsilate el hoda wa nour/index1.html', 'user' : { 'name' :  'محمد ناصر الدين الألباني',  'color' : '#07D5E5'} },
+      { 'icon' : 'm-phone',  'name' : 'سلسلة الهدى و النور', 'date' : 'https://dzapps.github.io/media-player-redo/media/islamia/Cheikh Mohamed Nacer Edine Al Albani/silsilate el hoda wa nour/index1.html', 'user' : { 'name' :  'محمد ناصر الدين الألباني',  'color' : '#07D5E5'} },
+       { 'icon' : 'm-phone',  'name' : 'سلسلة الهدى و النور', 'date' : 'https://dzapps.github.io/media-player-redo/media/islamia/Cheikh Mohamed Nacer Edine Al Albani/silsilate el hoda wa nour/index1.html', 'user' : { 'name' :  'محمد ناصر الدين الألباني',  'color' : '#07D5E5'} },
+      { 'icon' : 'm-phone',  'name' : 'سلسلة الهدى و النور', 'date' : 'https://dzapps.github.io/media-player-redo/media/islamia/Cheikh Mohamed Nacer Edine Al Albani/silsilate el hoda wa nour/index1.html', 'user' : { 'name' :  'محمد ناصر الدين الألباني',  'color' : '#07D5E5'} },
+      { 'icon' : 'm-phone',  'name' : 'سلسلة الهدى و النور', 'date' : 'https://dzapps.github.io/media-player-redo/media/islamia/Cheikh Mohamed Nacer Edine Al Albani/silsilate el hoda wa nour/index1.html', 'user' : { 'name' :  'محمد ناصر الدين الألباني',  'color' : '#07D5E5'} },
+       { 'icon' : 'm-phone',  'name' : 'سلسلة الهدى و النور', 'date' : 'https://dzapps.github.io/media-player-redo/media/islamia/Cheikh Mohamed Nacer Edine Al Albani/silsilate el hoda wa nour/index1.html', 'user' : { 'name' :  'محمد ناصر الدين الألباني',  'color' : '#07D5E5'} },
+      { 'icon' : 'm-phone',  'name' : 'سلسلة الهدى و النور', 'date' : 'https://dzapps.github.io/media-player-redo/media/islamia/Cheikh Mohamed Nacer Edine Al Albani/silsilate el hoda wa nour/index1.html', 'user' : { 'name' :  'محمد ناصر الدين الألباني',  'color' : '#07D5E5'} },
+      { 'icon' : 'm-phone',  'name' : 'سلسلة الهدى و النور', 'date' : 'https://dzapps.github.io/media-player-redo/media/islamia/Cheikh Mohamed Nacer Edine Al Albani/silsilate el hoda wa nour/index1.html', 'user' : { 'name' :  'محمد ناصر الدين الألباني',  'color' : '#07D5E5'} },
+       { 'icon' : 'm-phone',  'name' : 'سلسلة الهدى و النور', 'date' : 'https://dzapps.github.io/media-player-redo/media/islamia/Cheikh Mohamed Nacer Edine Al Albani/silsilate el hoda wa nour/index1.html', 'user' : { 'name' :  'محمد ناصر الدين الألباني',  'color' : '#07D5E5'} },
+      { 'icon' : 'm-phone',  'name' : 'سلسلة الهدى و النور', 'date' : 'https://dzapps.github.io/media-player-redo/media/islamia/Cheikh Mohamed Nacer Edine Al Albani/silsilate el hoda wa nour/index1.html', 'user' : { 'name' :  'محمد ناصر الدين الألباني',  'color' : '#07D5E5'} },
+      { 'icon' : 'm-phone',  'name' : 'سلسلة الهدى و النور', 'date' : 'https://dzapps.github.io/media-player-redo/media/islamia/Cheikh Mohamed Nacer Edine Al Albani/silsilate el hoda wa nour/index1.html', 'user' : { 'name' :  'محمد ناصر الدين الألباني',  'color' : '#07D5E5'} },
+       { 'icon' : 'm-phone',  'name' : 'سلسلة الهدى و النور', 'date' : 'https://dzapps.github.io/media-player-redo/media/islamia/Cheikh Mohamed Nacer Edine Al Albani/silsilate el hoda wa nour/index1.html', 'user' : { 'name' :  'محمد ناصر الدين الألباني',  'color' : '#07D5E5'} },
+      { 'icon' : 'm-phone',  'name' : 'سلسلة الهدى و النور', 'date' : 'https://dzapps.github.io/media-player-redo/media/islamia/Cheikh Mohamed Nacer Edine Al Albani/silsilate el hoda wa nour/index1.html', 'user' : { 'name' :  'محمد ناصر الدين الألباني',  'color' : '#07D5E5'} },
+      { 'icon' : 'm-phone',  'name' : 'سلسلة الهدى و النور', 'date' : 'https://dzapps.github.io/media-player-redo/media/islamia/Cheikh Mohamed Nacer Edine Al Albani/silsilate el hoda wa nour/index1.html', 'user' : { 'name' :  'محمد ناصر الدين الألباني',  'color' : '#07D5E5'} },
+       { 'icon' : 'm-phone',  'name' : 'سلسلة الهدى و النور', 'date' : 'https://dzapps.github.io/media-player-redo/media/islamia/Cheikh Mohamed Nacer Edine Al Albani/silsilate el hoda wa nour/index1.html', 'user' : { 'name' :  'محمد ناصر الدين الألباني',  'color' : '#07D5E5'} },
+      { 'icon' : 'm-phone',  'name' : 'سلسلة الهدى و النور', 'date' : 'https://dzapps.github.io/media-player-redo/media/islamia/Cheikh Mohamed Nacer Edine Al Albani/silsilate el hoda wa nour/index1.html', 'user' : { 'name' :  'محمد ناصر الدين الألباني',  'color' : '#07D5E5'} },
+      { 'icon' : 'm-phone',  'name' : 'سلسلة الهدى و النور', 'date' : 'https://dzapps.github.io/media-player-redo/media/islamia/Cheikh Mohamed Nacer Edine Al Albani/silsilate el hoda wa nour/index1.html', 'user' : { 'name' :  'محمد ناصر الدين الألباني',  'color' : '#07D5E5'} },
+       { 'icon' : 'm-phone',  'name' : 'سلسلة الهدى و النور', 'date' : 'https://dzapps.github.io/media-player-redo/media/islamia/Cheikh Mohamed Nacer Edine Al Albani/silsilate el hoda wa nour/index1.html', 'user' : { 'name' :  'محمد ناصر الدين الألباني',  'color' : '#07D5E5'} },
+      { 'icon' : 'm-phone',  'name' : 'سلسلة الهدى و النور', 'date' : 'https://dzapps.github.io/media-player-redo/media/islamia/Cheikh Mohamed Nacer Edine Al Albani/silsilate el hoda wa nour/index1.html', 'user' : { 'name' :  'محمد ناصر الدين الألباني',  'color' : '#07D5E5'} },
+      { 'icon' : 'm-phone',  'name' : 'سلسلة الهدى و النور', 'date' : 'https://dzapps.github.io/media-player-redo/media/islamia/Cheikh Mohamed Nacer Edine Al Albani/silsilate el hoda wa nour/index1.html', 'user' : { 'name' :  'محمد ناصر الدين الألباني',  'color' : '#07D5E5'} },
+       { 'icon' : 'm-phone',  'name' : 'سلسلة الهدى و النور', 'date' : 'https://dzapps.github.io/media-player-redo/media/islamia/Cheikh Mohamed Nacer Edine Al Albani/silsilate el hoda wa nour/index1.html', 'user' : { 'name' :  'محمد ناصر الدين الألباني',  'color' : '#07D5E5'} },
+      { 'icon' : 'm-phone',  'name' : 'سلسلة الهدى و النور', 'date' : 'https://dzapps.github.io/media-player-redo/media/islamia/Cheikh Mohamed Nacer Edine Al Albani/silsilate el hoda wa nour/index1.html', 'user' : { 'name' :  'محمد ناصر الدين الألباني',  'color' : '#07D5E5'} },
+      { 'icon' : 'm-phone',  'name' : 'سلسلة الهدى و النور', 'date' : 'https://dzapps.github.io/media-player-redo/media/islamia/Cheikh Mohamed Nacer Edine Al Albani/silsilate el hoda wa nour/index1.html', 'user' : { 'name' :  'محمد ناصر الدين الألباني',  'color' : '#07D5E5'} },
+       { 'icon' : 'm-phone',  'name' : 'سلسلة الهدى و النور', 'date' : 'https://dzapps.github.io/media-player-redo/media/islamia/Cheikh Mohamed Nacer Edine Al Albani/silsilate el hoda wa nour/index1.html', 'user' : { 'name' :  'محمد ناصر الدين الألباني',  'color' : '#07D5E5'} },
+      { 'icon' : 'm-phone',  'name' : 'سلسلة الهدى و النور', 'date' : 'https://dzapps.github.io/media-player-redo/media/islamia/Cheikh Mohamed Nacer Edine Al Albani/silsilate el hoda wa nour/index1.html', 'user' : { 'name' :  'محمد ناصر الدين الألباني',  'color' : '#07D5E5'} },
+      { 'icon' : 'm-phone',  'name' : 'سلسلة الهدى و النور', 'date' : 'https://dzapps.github.io/media-player-redo/media/islamia/Cheikh Mohamed Nacer Edine Al Albani/silsilate el hoda wa nour/index1.html', 'user' : { 'name' :  'محمد ناصر الدين الألباني',  'color' : '#07D5E5'} },
+                                     
       
     ];
     
@@ -629,11 +671,21 @@ li.pagination ul.pager li a {
   }]);
   </script>
 
-  
+
+
+
+
+
+
+
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
 
 </body>
 </html>
     
-  
+
+
+
+
+
