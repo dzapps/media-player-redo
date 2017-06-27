@@ -443,7 +443,7 @@ li.pagination ul.pager li a {
           <ul>
             <li style="width:40%"><a ng-click="sort_by('name')">الصوتيات</a></li>
             <li style="width:30%"><a ng-click="sort_by('user.name')">المؤلف</a></li>
-              <li style="width:15%"><a ng-click="sort_by('date')">تاريخ الرفع و النشر</a></li>
+              <li style="width:15%"><a ng-click="sort_by('date')">الرابط</a></li>
             <li style="width:15%"></li>
           </ul>
         </li>
@@ -605,7 +605,7 @@ li.pagination ul.pager li a {
     };
     
     var items = [
-      { 'icon' : 'm-phone',  'name' : ' <a href="https://dzapps.github.io/media-player-redo/media/islamia/Cheikh Mohamed Nacer Edine Al Albani/silsilate el hoda wa nour/index1.html"> سلسلة الهدى و النور',         'date' : '26-06-2017', 'user' : { 'name' : 'العلامة محمد ناصر الدين الألباني',  'color' : '#07D5E5'} },
+      { 'icon' : 'm-phone',  'name' : 'سلسلة الهدى و النور',         'date' : ' <a href="https://dzapps.github.io/media-player-redo/media/islamia/Cheikh Mohamed Nacer Edine Al Albani/silsilate el hoda wa nour/index1.html"> ', 'user' : { 'name' : 'العلامة محمد ناصر الدين الألباني',  'color' : '#07D5E5'} },
       { 'icon' : 'class="fa fa-music',     'name' : 'Mobile Splash Page',     'date' : 'Yesterday at 4:30pm', 'user' : { 'name' : 'Munkey',  'color' : '#07D5E5'} },
       { 'icon' : 'm-photo',   'name' : 'Some Other Site',        'date' : 'Today at 3:35am', 'user' : { 'name' : 'Someone', 'color' : '#456183'} },
       { 'icon' : 'm-desktop', 'name' : 'Jerry\'s Blog',          'date' : 'Thursday at 7:15pm', 'user' : { 'name' : 'Jerry',   'color' : '#4677A7'} },
@@ -630,7 +630,8 @@ li.pagination ul.pager li a {
   </script>
 
   
-  
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
 
 </body>
 </html>
